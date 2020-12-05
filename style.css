@@ -1,0 +1,33 @@
+body {
+    background-color: black;
+    color: wheat;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    margin-left: 26px;
+}
+
+table, tr, td {
+    border: 0px;
+}
+
+::selection {
+    background-color: wheat;
+    color: black;
+}
+
+input, label {
+    cursor: pointer;
+}
+
+#boutonSoumettre:hover {
+    background-color: wheat;
+    color: black;
+}
+#boutonSoumettre {
+    background-color: black;
+    color: wheat;
+    border: 2px solid wheat;
+    width: 200px;
+    height: 40px;
+    font-size: large;
+}
