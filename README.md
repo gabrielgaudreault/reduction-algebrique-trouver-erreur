@@ -7,3 +7,6 @@
 5. ouvrir dans
 6. sélectionner un logiciel web (<b>firefox</b>, edge, chrome, <b>chromium</b>, internet explorer) (<b>texte en gras</b> = tester)
 7. faire le défi
+
+
+<b>maintenant dispnible ici : https://gabrielgaudreault.github.io/reduction-algebrique-trouver-erreur/</b>
