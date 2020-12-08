@@ -1,6 +1,6 @@
 # reduction algebrique trouver l'erreur
 
-1. selectionner la version la plus récente
+1. selectionner la version que vous souhaitez (la version sélectionner par défault est la plus récente)
 
 <b>pour la pré-release : liser le fichier de modification</b>
 
