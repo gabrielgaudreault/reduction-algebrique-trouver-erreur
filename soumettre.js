@@ -6,6 +6,9 @@ valueInitialBoutonSoumettre = boutonSoumettre.value;
 var choix1 = document.getElementById("choix1");
 var choix2 = document.getElementById("choix2");
 var choix3 = document.getElementById("choix3");
+choix1.checked = false;
+choix2.checked = false;
+choix3.checked = false;
 
 choix1.addEventListener("click", textStatusVide);
 choix2.addEventListener("click", textStatusVide);
@@ -100,10 +103,6 @@ function continuer(premiereFois = false) {
         for(i = 1; i < probleme.length; i++) {
             probleme[i].style.display = "none";
         }
-
-        choix1.checked = false;
-        choix2.checked = false;
-        choix3.checked = false;
 
         return null;
     }
