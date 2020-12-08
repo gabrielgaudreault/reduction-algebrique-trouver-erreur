@@ -6,9 +6,15 @@ valueInitialBoutonSoumettre = boutonSoumettre.value;
 var choix1 = document.getElementById("choix1");
 var choix2 = document.getElementById("choix2");
 var choix3 = document.getElementById("choix3");
-choix1.checked = false;
-choix2.checked = false;
-choix3.checked = false;
+
+choix1.addEventListener("click", textStatusVide);
+choix2.addEventListener("click", textStatusVide);
+choix3.addEventListener("click", textStatusVide);
+
+function textStatusVide() {
+    textStatus.innerHTML = "";
+}
+
 
 var textStatus = document.getElementById("textStatus");
 
@@ -22,7 +28,9 @@ var bonneReponseArray = [
     2,
     3,
     2, 
-    2
+    2,
+    2,
+    3
 ];
 
 function corriger() {
@@ -46,6 +54,11 @@ function corriger() {
         } else {
             erreur();
         }
+    }
+
+    else {
+        textStatus.innerHTML = "vous n'avez pas entrez de réponse";
+        textStatus.style.color = "wheat";
     }
 }
 
@@ -71,8 +84,11 @@ var probleme = [
     document.getElementById("probleme5"),
     document.getElementById("probleme6"), 
     document.getElementById("probleme7"),
-    document.getElementById("probleme8")
+    document.getElementById("probleme8"),
+    document.getElementById("probleme9"),
+    document.getElementById("probleme10")
 ];
+
 var indexProbleme = 0;
 document.getElementById("max").innerHTML = probleme.length;
 var problemeIndexDom = document.getElementById("problemeIndex");
@@ -84,6 +100,11 @@ function continuer(premiereFois = false) {
         for(i = 1; i < probleme.length; i++) {
             probleme[i].style.display = "none";
         }
+
+        choix1.checked = false;
+        choix2.checked = false;
+        choix3.checked = false;
+
         return null;
     }
     probleme[indexProbleme].style.display = "none";
