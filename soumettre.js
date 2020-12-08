@@ -10,11 +10,21 @@ choix1.checked = false;
 choix2.checked = false;
 choix3.checked = false;
 
-choix1.addEventListener("click", textStatusVide);
-choix2.addEventListener("click", textStatusVide);
-choix3.addEventListener("click", textStatusVide);
+choix1.addEventListener("click", choixCliquer);
+choix2.addEventListener("click", choixCliquer);
+choix3.addEventListener("click", choixCliquer);
 
-function textStatusVide() {
+
+
+function choixCliquer() {
+    if (bonneReponseEntre) {
+        choix1.checked = false;
+        choix2.checked = false;
+        choix3.checked = false;
+
+        return null;
+    }
+
     textStatus.innerHTML = "";
 }
 
@@ -65,6 +75,8 @@ function corriger() {
     }
 }
 
+var bonneReponseEntre = false;
+
 function erreur() {
     textStatus.innerHTML = "erreur";
     textStatus.style.color = "red";
@@ -75,7 +87,8 @@ function bonneReponse() {
     textStatus.style.color = "green";
     boutonSoumettre.value = "continuer";
     boutonSoumettre.removeEventListener("click", corriger);
-    boutonSoumettre.addEventListener("click", continuer);   
+    boutonSoumettre.addEventListener("click", continuer); 
+    bonneReponseEntre = true;  
 }
 
 
@@ -127,4 +140,6 @@ function continuer(premiereFois = false) {
     choix1.checked = false;
     choix2.checked = false;
     choix3.checked = false;
+
+    bonneReponseEntre = false;
 }
