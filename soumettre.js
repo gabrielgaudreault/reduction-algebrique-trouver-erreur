@@ -21,6 +21,7 @@ var bonneReponseArray = [
     1,
     2,
     3,
+    2, 
     2
 ];
 
@@ -69,7 +70,8 @@ var probleme = [
     document.getElementById("probleme4"),
     document.getElementById("probleme5"),
     document.getElementById("probleme6"), 
-    document.getElementById("probleme7")
+    document.getElementById("probleme7"),
+    document.getElementById("probleme8")
 ];
 var indexProbleme = 0;
 document.getElementById("max").innerHTML = probleme.length;
@@ -87,6 +89,7 @@ function continuer(premiereFois = false) {
     probleme[indexProbleme].style.display = "none";
     indexProbleme++;
     if (probleme[indexProbleme] == null) {
+        document.getElementById("problemeNumero").style.color = "green";
         textStatus.innerHTML = "Vous avez fait tous les problèmes";
         textStatus.style.color = "green";
         document.getElementById("form").style.display = "none";
