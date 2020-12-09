@@ -18,9 +18,21 @@ choix3.addEventListener("click", choixCliquer);
 
 function choixCliquer() {
     if (bonneReponseEntre) {
-        choix1.checked = false;
-        choix2.checked = false;
-        choix3.checked = false;
+        if (bonneReponseArray[bonneReponseIndex] == 1) {
+            choix1.checked = true;
+        } else {
+            choix1.checked = false;
+        }
+        if (bonneReponseArray[bonneReponseIndex] == 2) {
+            choix2.checked = true;
+        } else {
+            choix2.checked = false;
+        }
+        if (bonneReponseArray[bonneReponseIndex] == 3) {
+            choix3.checked = true;
+        } else {
+            choix3.checked = false;
+        }
 
         return null;
     }
@@ -88,7 +100,7 @@ function bonneReponse() {
     boutonSoumettre.value = "continuer";
     boutonSoumettre.removeEventListener("click", corriger);
     boutonSoumettre.addEventListener("click", continuer); 
-    bonneReponseEntre = true;  
+    bonneReponseEntre = true;
 }
 
 
