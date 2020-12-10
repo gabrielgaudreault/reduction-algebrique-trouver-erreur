@@ -6,13 +6,16 @@ valueInitialBoutonSoumettre = boutonSoumettre.value;
 var choix1 = document.getElementById("choix1");
 var choix2 = document.getElementById("choix2");
 var choix3 = document.getElementById("choix3");
+var aucunChoix = document.getElementById("choixAucun");
 choix1.checked = false;
 choix2.checked = false;
 choix3.checked = false;
+aucunChoix.checked = false;
 
 choix1.addEventListener("click", choixCliquer);
 choix2.addEventListener("click", choixCliquer);
 choix3.addEventListener("click", choixCliquer);
+aucunChoix.addEventListener("click", choixCliquer);
 
 
 
@@ -33,6 +36,7 @@ function choixCliquer() {
         } else {
             choix3.checked = false;
         }
+        aucunChoix.checked = false;
 
         return null;
     }
@@ -79,6 +83,9 @@ function corriger() {
         } else {
             erreur();
         }
+    }
+    else if (aucunChoix.checked == true) {
+        erreur();
     }
 
     else {
