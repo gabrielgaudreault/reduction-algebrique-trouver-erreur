@@ -8,6 +8,7 @@ body {
 
 table, tr, td {
     border: 0px;
+    border-color: none;
 }
 
 ::selection {
