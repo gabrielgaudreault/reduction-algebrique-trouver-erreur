@@ -9,4 +9,4 @@
 7. faire le défi
 
 
-<b>maintenant dispnible ici : https://gabrielgaudreault.github.io/reduction-algebrique-trouver-erreur/</b>
+<b>dispnible ici : https://gabrielgaudreault.github.io/reduction-algebrique-trouver-erreur/</b>
