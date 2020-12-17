@@ -20,17 +20,21 @@ input, label {
     cursor: pointer;
 }
 
-#boutonSoumettre:hover, #reesayer:hover {
+#boutonSoumettre:hover, #reesayer:hover, #commencerButton:hover {
     background-color: wheat;
     color: black;
     text-decoration: underline;
 }
-#boutonSoumettre, #reesayer {
+#boutonSoumettre, #reesayer, #commencerButton {
     background-color: black;
     color: wheat;
     border: 2px solid wheat;
-    width: 200px;
+    width: 250px;
     height: 40px;
     font-size: large;
     text-decoration: none;
 }
+
+#commencerButton {
+    margin-top: 90px;
+    margin-left: 25px;

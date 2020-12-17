@@ -69,6 +69,7 @@ function choixCliquer() {
 
 
 var textStatus = document.getElementById("textStatus");
+textStatus.innerHTML = "";
 
 
 var bonneReponseIndex = 0;
@@ -123,7 +124,7 @@ function corriger() {
         } else {
             label3.style.color = "red";
             label3.innerHTML += "&nbsp;-&nbsp;erreur"
-            erreur();
+            erreur(); + 1
             choix3cliquer = true;
         }
     }
@@ -144,7 +145,7 @@ function corriger() {
 var bonneReponseEntre = false;
 
 function erreur() {
-    textStatus.innerHTML = "erreur";
+    textStatus.innerHTML = "mauvaise réponse";
     textStatus.style.color = "red";
     boutonSoumettre.value = valueInitialBoutonSoumettre;
     note--;
@@ -156,35 +157,55 @@ function erreur() {
 
 }
 function bonneReponse() {
-    textStatus.innerHTML = "bonne réponse";
+    textStatus.innerHTML = "BRAVO : c'est la bonne réponse";
     textStatus.style.color = "green";
-    boutonSoumettre.value = "continuer";
+    boutonSoumettre.value = "prochaine question";
     boutonSoumettre.removeEventListener("click", corriger);
     boutonSoumettre.addEventListener("click", continuer); 
     bonneReponseEntre = true;
 }
 
-var spanPobleme = document.getElementById("probleme");
+var divProbleme = document.getElementById("problemes");
 
-var probleme = spanPobleme.children;
+var probleme = divProbleme.children;
 
 var nbProbleme = probleme.length;
-var note = nbProbleme;
+
+var noteMax = nbProbleme + 1;
+
+var note = noteMax;
 
 var indexProbleme = 0;
-document.getElementById("max").innerHTML = probleme.length;
+document.getElementById("max").innerHTML = nbProbleme;
 var problemeIndexDom = document.getElementById("problemeIndex");
+problemeIndexDom.innerHTML = "1";
 
-continuer(true);
+for(i = 0; i < probleme.length; i++) {
+    probleme[i].style.display = "none";
+}
+
+var problemeNumero = document.getElementById("problemeNumero");
+problemeNumero.style.display = "none";
+
+var form = document.getElementById("form");
+form.style.display = "none";
+
+var commencerButton = document.getElementById("commencerButton");
+commencerButton.addEventListener("click", function() {
+    commencerButton.style.display = "none";
+    problemeNumero.style.display = "block";
+    form.style.display = "block";
+    continuer(true);
+});
+
+
 
 var buttonReessayer;
+
 
 function continuer(premiereFois = false) {
     textStatus.innerHTML = "";
     if (premiereFois == true) {
-        for(i = 1; i < probleme.length; i++) {
-            probleme[i].style.display = "none";
-        }
         probleme[0].style.display = "block";
         return null;
     }
@@ -194,15 +215,19 @@ function continuer(premiereFois = false) {
     indexProbleme++;
     
     if (indexProbleme >= nbProbleme) {
-        document.getElementById("problemeNumero").style.color = "green";
+        problemeNumero.style.color = "green";
         textStatus.innerHTML = "Vous avez fait tous les problèmes";
 
         if (note < 0) {
             note = 0;
         }
+
+        else if (note > noteMax) {
+            note = noteMax;
+        }
     
 
-        textStatus.innerHTML =  "<br><br>Votre note : "+(note/nbProbleme)*100+"%";
+        textStatus.innerHTML =  "<br><br>Votre note : "+(note/noteMax)*100+"%";
         if (note/nbProbleme < 6) {
             textStatus.innerHTML +=  "<br>Rechargez la page pour réessayer&nbsp;:&nbsp;";
             textStatus.innerHTML += '<input type="button" value="réessayer" id="reesayer"></input>';
@@ -212,7 +237,7 @@ function continuer(premiereFois = false) {
             });
         }
         textStatus.style.color = "green";
-        document.getElementById("form").style.display = "none";
+        form.style.display = "none";
 
         return null;
     }
@@ -230,7 +255,6 @@ function continuer(premiereFois = false) {
     choix2.checked = false;
     choix3.checked = false;
     aucunChoix.checked = false;
-
 
     choix1cliquer = false;
     choix2cliquer = false;
