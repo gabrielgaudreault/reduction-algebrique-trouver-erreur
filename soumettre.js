@@ -229,7 +229,7 @@ function continuer(premiereFois = false) {
     choix1.checked = false;
     choix2.checked = false;
     choix3.checked = false;
-    choix4.checked = false;
+    aucunChoix.checked = false;
 
 
     choix1cliquer = false;
