@@ -93,6 +93,8 @@ var choix4cliquer;
 function corriger() {
     if (choix1.checked == true && !choix1cliquer) {
         if (bonneReponseArray[bonneReponseIndex] == 1) {
+            label1.style.color = "green";
+            label1.innerHTML = "<b>" + label1textDefault + "</b>";
             bonneReponse();
         } else {
             label1.style.color = "red";
@@ -103,6 +105,8 @@ function corriger() {
     }
     else if (choix2.checked == true && !choix2cliquer) {
         if (bonneReponseArray[bonneReponseIndex] == 2) {
+            label2.style.color = "green";
+            label2.innerHTML = "<b>" + label2textDefault + "</b>";
             bonneReponse();
         } else {
             label2.style.color = "red";
@@ -113,6 +117,8 @@ function corriger() {
     }
     else if (choix3.checked == true && !choix3cliquer) {
         if (bonneReponseArray[bonneReponseIndex] == 3) {
+            label3.style.color = "green";
+            label3.innerHTML = "<b>" + label3textDefault + "</b>";
             bonneReponse();
         } else {
             label3.style.color = "red";
@@ -142,9 +148,6 @@ function erreur() {
     textStatus.style.color = "red";
     boutonSoumettre.value = valueInitialBoutonSoumettre;
     note--;
-    if (note < 0) {
-        note = 0;
-    }
 
     choix1.checked = false;
     choix2.checked = false;
@@ -181,7 +184,11 @@ var note = nbProbleme;
 var indexProbleme = 0;
 document.getElementById("max").innerHTML = probleme.length;
 var problemeIndexDom = document.getElementById("problemeIndex");
+
 continuer(true);
+
+var buttonReessayer;
+
 function continuer(premiereFois = false) {
     textStatus.innerHTML = "";
     if (premiereFois == true) {
@@ -192,22 +199,35 @@ function continuer(premiereFois = false) {
 
         return null;
     }
+
     probleme[indexProbleme].style.display = "none";
+
     indexProbleme++;
-    if (probleme[indexProbleme] == null) {
+    
+    if (indexProbleme >= nbProbleme) {
         document.getElementById("problemeNumero").style.color = "green";
         textStatus.innerHTML = "Vous avez fait tous les problèmes";
-        if (note/nbProbleme >= 6) {
-            textStatus.innerHTML +=  "<br><br>Votre note : "+(note/nbProbleme)*100+"%";
+
+        if (note < 0) {
+            note = 0;
         }
+    
+
+        textStatus.innerHTML =  "<br><br>Votre note : "+(note/nbProbleme)*100+"%";
         if (note/nbProbleme < 6) {
-            textStatus.innerHTML +=  "<br><br>Votre note : "+(note/nbProbleme)*100+"% <br>Rechargez la page pour réessayer";
+            textStatus.innerHTML +=  "<br>Rechargez la page pour réessayer&nbsp;:&nbsp;";
+            textStatus.innerHTML += '<input type="button" value="réessayer" id="reesayer"></input>';
+            buttonReessayer = document.getElementById("reesayer");
+            buttonReessayer.addEventListener("click", function() {
+                document.location.reload();
+            });
         }
-        textStatus.innerHTML +=  "<br><br>Votre note : "+(note/nbProbleme)*100+"%"
         textStatus.style.color = "green";
         document.getElementById("form").style.display = "none";
-        return null
+
+        return null;
     }
+
     bonneReponseIndex++;
     probleme[indexProbleme].style.display = "block";
 
@@ -220,8 +240,6 @@ function continuer(premiereFois = false) {
     choix1.checked = false;
     choix2.checked = false;
     choix3.checked = false;
-
-    bonneReponseEntre = false;
 
     choix1cliquer = false;
     choix2cliquer = false;
@@ -236,4 +254,6 @@ function continuer(premiereFois = false) {
     label3.innerHTML = label3textDefault;
     label4.style.color = "wheat";
     label4.innerHTML = label4textDefault;
+    
+    bonneReponseEntre = false;
 }
