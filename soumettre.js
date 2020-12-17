@@ -69,7 +69,6 @@ function choixCliquer() {
 
 
 var textStatus = document.getElementById("textStatus");
-textStatus.innerHTML = "";
 
 
 var bonneReponseIndex = 0;
@@ -215,8 +214,12 @@ function continuer(premiereFois = false) {
     indexProbleme++;
     
     if (indexProbleme >= nbProbleme) {
+        textStatus.innerHTML = "chargement en cours...";
+
         problemeNumero.style.color = "green";
-        textStatus.innerHTML = "Vous avez fait tous les problèmes";
+        problemeNumero.innerHTML = "tous les problèmes ont été fait";
+        
+        form.style.display = "none";
 
         if (note < 0) {
             note = 0;
@@ -226,18 +229,20 @@ function continuer(premiereFois = false) {
             note = noteMax;
         }
     
+        var notePCT = Math.round((note* 100)/noteMax);
+        textStatus.style.color = "green";
 
-        textStatus.innerHTML =  "<br><br>Votre note : "+(note/noteMax)*100+"%";
-        if (note/nbProbleme < 6) {
-            textStatus.innerHTML +=  "<br>Rechargez la page pour réessayer&nbsp;:&nbsp;";
+        textStatus.innerHTML =  "Votre note : " + notePCT + "%";
+        if (notePCT < 60) {
+            textStatus.innerHTML +=  "<br>Vous n'avez pas réussis le problème<br>Rechargez la page pour réessayer&nbsp;:&nbsp;";
             textStatus.innerHTML += '<input type="button" value="réessayer" id="reesayer"></input>';
+            textStatus.style.color = "red";
             buttonReessayer = document.getElementById("reesayer");
             buttonReessayer.addEventListener("click", function() {
                 document.location.reload();
             });
         }
-        textStatus.style.color = "green";
-        form.style.display = "none";
+        
 
         return null;
     }
