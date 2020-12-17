@@ -164,19 +164,9 @@ function bonneReponse() {
     bonneReponseEntre = true;
 }
 
+var spanPobleme = document.getElementById("probleme");
 
-var probleme = [
-    document.getElementById("probleme1"),
-    document.getElementById("probleme2"),
-    document.getElementById("probleme3"),
-    document.getElementById("probleme4"),
-    document.getElementById("probleme5"),
-    document.getElementById("probleme6"), 
-    document.getElementById("probleme7"),
-    document.getElementById("probleme8"),
-    document.getElementById("probleme9"),
-    document.getElementById("probleme10")
-];
+var probleme = spanPobleme.children;
 
 var nbProbleme = probleme.length;
 var note = nbProbleme;
@@ -192,11 +182,10 @@ var buttonReessayer;
 function continuer(premiereFois = false) {
     textStatus.innerHTML = "";
     if (premiereFois == true) {
-        probleme[0].style.display = "block";
         for(i = 1; i < probleme.length; i++) {
             probleme[i].style.display = "none";
         }
-
+        probleme[0].style.display = "block";
         return null;
     }
 
@@ -240,6 +229,8 @@ function continuer(premiereFois = false) {
     choix1.checked = false;
     choix2.checked = false;
     choix3.checked = false;
+    choix4.checked = false;
+
 
     choix1cliquer = false;
     choix2cliquer = false;
