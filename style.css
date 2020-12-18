@@ -40,3 +40,7 @@ input, label {
     margin-top: 75px;
     margin-left: 25px;
 }
+
+input {
+    outline: none;
+}
