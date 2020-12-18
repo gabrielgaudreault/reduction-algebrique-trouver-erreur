@@ -5,7 +5,7 @@
 3. décompresser les fichiers <b>IMPORTANT : LES FICHIERS DOIVENT ÊTRE DANS LE MÊME DOSSIER</b>
 4. clique droit sur "index.html"
 5. ouvrir dans
-6. sélectionner un logiciel web (<b>firefox</b>, <b>edge</b>, <b>chrome</b>, <b>chromium</b>, internet explorer) (<b>texte en gras</b> = tester sur ordinateur uniquement, non-recommender sur Android et IOS car l'écran est trop petit) 
+6. sélectionner un logiciel web (<b>firefox</b>, <b>edge</b>, <b>chrome</b>, <b>chromium</b>, internet explorer) (<b>texte en gras</b> = tester sur ordinateur uniquement (Windows ou Linux), non-recommender sur Android et IOS car l'écran est trop petit) 
 7. faire le défi
 
 
