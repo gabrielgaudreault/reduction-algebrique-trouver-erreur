@@ -23,6 +23,7 @@ input, label {
 #boutonSoumettre:hover, #reesayer:hover, #commencerButton:hover {
     background-color: wheat;
     color: black;
+    border-color: black;
     text-decoration: underline;
     text-transform: uppercase;
 }
@@ -30,6 +31,8 @@ input, label {
     background-color: black;
     color: wheat;
     border: 2px solid wheat;
+    border-bottom: 5px solid wheat;
+    border-right: 5px solid wheat;
     width: 250px;
     height: 40px;
     font-size: large;
@@ -42,5 +45,5 @@ input, label {
 }
 
 input {
-    outline: none;
+    outline: one;
 }
