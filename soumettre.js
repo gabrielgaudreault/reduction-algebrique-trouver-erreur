@@ -27,6 +27,13 @@ choix2.addEventListener("click", choixCliquer);
 choix3.addEventListener("click", choixCliquer);
 aucunChoix.addEventListener("click", choixCliquer);
 
+var choix1actuel = false;
+var choix2actuel = false;
+var choix3actuel = false;
+var choix4actuel = false;
+
+
+
 
 
 function choixCliquer() {
@@ -46,7 +53,11 @@ function choixCliquer() {
         } else {
             choix3.checked = false;
         }
-        aucunChoix.checked = false;
+        if (bonneReponseArray[bonneReponseIndex] == 4) {
+            aucunChoix.checked = true;
+        } else {
+            aucunChoix.checked = false;
+        }
 
         return null;
     }
@@ -61,7 +72,52 @@ function choixCliquer() {
         choix3.checked = false;
     }
     else if (aucunChoix.checked == true && choix4cliquer) {
-        choix4.checked = false;
+        aucunChoix.checked = false;
+    }
+
+    if (choix1.checked == true && choix1actuel) {
+        choix1.checked = false;
+    }
+    else if (choix2.checked == true && choix2actuel) {
+        choix2.checked = false;
+    }
+    else if (choix3.checked == true && choix3actuel) {
+        choix3.checked = false;
+    }
+    else if (aucunChoix.checked == true && choix4actuel) {
+        aucunChoix.checked = false;
+    }
+
+    if (choix1.checked == true) {
+        choix1actuel = true;
+        choix2actuel = false;
+        choix3actuel = false;
+        choix4actuel = false;
+    }
+    else if (choix2.checked == true) {
+        choix1actuel = false;
+        choix2actuel = true;
+        choix3actuel = false;
+        choix4actuel = false;
+    }
+    else if (choix3.checked == true) {
+        choix1actuel = false;
+        choix2actuel = false;
+        choix3actuel = true;
+        choix4actuel = false;
+    }
+    else if (aucunChoix.checked == true) {
+        choix1actuel = false;
+        choix2actuel = false;
+        choix3actuel = false;
+        choix4actuel = true;
+    }
+
+    else {
+        choix1actuel = false;
+        choix2actuel = false;
+        choix3actuel = false;
+        choix4actuel = false;
     }
 
     textStatus.innerHTML = "";
@@ -82,7 +138,9 @@ var bonneReponseArray = [
     2, 
     2,
     2,
-    3
+    3,
+    4,
+    4
 ];
 
 var choix1cliquer;
@@ -128,10 +186,16 @@ function corriger() {
         }
     }
     else if (aucunChoix.checked == true && !choix4cliquer) {
-        label4.style.color = "red";
-        label4.innerHTML += "&nbsp;-&nbsp;erreur"
-        erreur();
-        choix4cliquer = true;
+        if (bonneReponseArray[bonneReponseIndex] == 4) {
+            label4.style.color = "green";
+            label4.innerHTML = "<b>" + label4textDefault + "</b>";
+            bonneReponse();
+        } else {
+            label4.style.color = "red";
+            label4.innerHTML += "&nbsp;-&nbsp;erreur"
+            erreur(); + 1
+            choix4cliquer = true;
+        }
     }
 
     else {
