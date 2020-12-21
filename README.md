@@ -1,5 +1,7 @@
 # reduction algebrique trouver l'erreur
 
+## 12 problèmes de réduction alébrique
+
 1. selectionner la version que vous souhaitez (la version sélectionner par défault est la plus récente)
 2. Source code
 3. décompresser les fichiers <b>IMPORTANT : LES FICHIERS DOIVENT ÊTRE DANS LE MÊME DOSSIER</b>
