@@ -223,7 +223,7 @@ function bonneReponse() {
     boutonSoumettre.removeEventListener("click", corriger);
     boutonSoumettre.addEventListener("click", continuer);
     
-    if (indexProbleme >= probleme.length) {
+    if (indexProbleme >= probleme.length - nbDefi) {
         note++;
     }
 
