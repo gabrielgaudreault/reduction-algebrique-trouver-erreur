@@ -33,9 +33,6 @@ var choix3actuel = false;
 var choix4actuel = false;
 
 
-
-
-
 function choixCliquer() {
     if (bonneReponseEntre) {
         if (bonneReponseArray[bonneReponseIndex] == 1) {
@@ -126,7 +123,7 @@ function choixCliquer() {
 
 var textStatus = document.getElementById("textStatus");
 
-
+var nbDefi = 2;
 var bonneReponseIndex = 0;
 var bonneReponseArray = [
     2, 
@@ -224,15 +221,19 @@ function bonneReponse() {
     textStatus.style.color = "green";
     boutonSoumettre.value = "prochaine question";
     boutonSoumettre.removeEventListener("click", corriger);
-    boutonSoumettre.addEventListener("click", continuer); 
+    boutonSoumettre.addEventListener("click", continuer);
+    
+    if (indexProbleme >= probleme.length) {
+        note++;
+    }
+
     bonneReponseEntre = true;
 }
 
-var divProbleme = document.getElementById("problemes");
+var probleme = document.getElementById("problemes").children;
 
-var probleme = divProbleme.children;
-
-var nbProbleme = probleme.length;
+var nbProbleme = probleme.length - nbDefi;
+var nbProblemeTotal = probleme.length;
 
 var noteMax = nbProbleme + 1;
 
@@ -247,6 +248,14 @@ for(i = 0; i < probleme.length; i++) {
     probleme[i].style.display = "none";
 }
 
+
+
+var defiNumero = document.getElementById("defiNumero");
+defiNumero.style.display = "none";
+var defiIndex = document.getElementById("defiIndex");
+defiIndex.innerHTML = "1";
+document.getElementById("defiMax").innerHTML = nbDefi.toString();
+
 var problemeNumero = document.getElementById("problemeNumero");
 problemeNumero.style.display = "none";
 
@@ -255,7 +264,7 @@ form.style.display = "none";
 
 var commencerButton = document.getElementById("commencerButton");
 commencerButton.addEventListener("click", function() {
-    commencerButton.style.display = "none";
+    document.getElementById("commencer").style.display = "none";
     problemeNumero.style.display = "block";
     form.style.display = "block";
     continuer(true);
@@ -276,11 +285,15 @@ function continuer(premiereFois = false) {
     probleme[indexProbleme].style.display = "none";
 
     indexProbleme++;
-    
-    if (indexProbleme >= nbProbleme) {
-        textStatus.innerHTML = "chargement en cours...";
 
-        problemeNumero.style.color = "green";
+    if (indexProbleme >= nbProbleme) {
+        problemeNumero.style.display = "none";
+        defiNumero.style.display = "block";
+        defiIndex.innerHTML = (indexProbleme - nbProbleme) + 1;
+    }
+    
+    if (indexProbleme >= nbProblemeTotal) {
+        defiNumero.style.color = "green";
         problemeNumero.innerHTML = "tous les problèmes ont été fait";
         
         form.style.display = "none";
@@ -296,12 +309,19 @@ function continuer(premiereFois = false) {
         var notePCT = Math.round((note* 100)/noteMax);
         textStatus.style.color = "green";
 
-        textStatus.innerHTML =  "Votre note : " + notePCT + "%";
+        textStatus.innerHTML =  "Votre note : " + notePCT + "% <br>";
+        if (note > 1) {
+            textStatus.innerHTML += "en point cela vous fait" + note + " points sur " + (noteMax + nbDefi) + "points";
+        }
+        else {
+            textStatus.innerHTML += "en point cela vous fait " + note + " point sur " + (noteMax + nbDefi) + "points";
+        }
+
         if (notePCT < 60) {
-            textStatus.innerHTML +=  "<br>Vous n'avez pas réussis le problème<br>Rechargez la page pour réessayer&nbsp;:&nbsp;";
+            textStatus.innerHTML +=  "<br><br>Vous n'avez pas réussis les problèmes avec asser de point<br>Rechargez la page pour réessayer&nbsp;:&nbsp;";
             textStatus.innerHTML += '<input type="button" value="réessayer" id="reesayer"></input>';
             textStatus.style.color = "red";
-            buttonReessayer = document.getElementById("reesayer");
+            var buttonReessayer = document.getElementById("reesayer");
             buttonReessayer.addEventListener("click", function() {
                 document.location.reload();
             });
@@ -329,6 +349,11 @@ function continuer(premiereFois = false) {
     choix2cliquer = false;
     choix3cliquer = false;
     choix4cliquer = false;
+
+    choix1actuel = false;
+    choix2actuel = false;
+    choix3actuel = false;
+    choix4actuel = false;
 
     label1.style.color = "wheat";
     label1.innerHTML = label1textDefault;

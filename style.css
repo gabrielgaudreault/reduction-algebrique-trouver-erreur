@@ -37,11 +37,19 @@ input, label {
     text-decoration: none;
 }
 
-#commencerButton {
-    margin-top: 75px;
-    margin-left: 25px;
+#commencer {
+    margin-top: 30px;
+    margin-left: 20px;
 }
 
 input {
     outline: none;
+}
+
+li {
+    margin-bottom: 30px;
+}
+
+ol {
+    margin-bottom: 75px;
 }
