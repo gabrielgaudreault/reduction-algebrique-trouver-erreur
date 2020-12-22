@@ -8,8 +8,9 @@
 3. décompresser les fichiers <b>IMPORTANT : LES FICHIERS DOIVENT ÊTRE DANS LE MÊME DOSSIER</b>
 4. clique droit sur "index.html"
 5. ouvrir dans
-6. sélectionner un logiciel web (<b>firefox</b>, <b>edge</b>, <b>chrome</b>, <b>chromium</b>, internet explorer) (<b>texte en gras</b> = tester sur ordinateur uniquement (Windows ou Linux), non-recommender sur Android et IOS) 
+6. sélectionner un logiciel web (<b>firefox</b>, <b>edge</b>, <b>chrome</b>, <b>chromium</b>, internet explorer) (<b>texte en gras</b> = tester sur ordinateur uniquement (Windows ou Linux), non-recommender sur tablette ou téléphone Android et IOS) 
 7. faire le défi
 
 ### en ligne
 <b>dispnible ici : https://gabrielgaudreault.github.io/reduction-algebrique-trouver-erreur/</b>
+pour Mozilla Firefox, Microsoft Edge, Google Chrome, Chromium (version Windows ou Linux, non-tester sur MacOS)
