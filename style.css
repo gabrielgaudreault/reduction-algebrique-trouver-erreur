@@ -37,12 +37,7 @@ input, label {
     text-decoration: none;
 }
 
-#commencer {
-    margin-top: 30px;
-    margin-left: 20px;
-}
-
-input {
+body {
     outline: none;
 }
 
