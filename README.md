@@ -12,5 +12,5 @@
 7. faire le défi
 
 ### en ligne
-<b>dispnible ici : https://gabrielgaudreault.github.io/reduction-algebrique-trouver-erreur/</b>
+<b>dispnible ici : https://gabrielgaudreault.github.io/reduction-algebrique-trouver-erreur/</b><br>
 pour Mozilla Firefox, Microsoft Edge, Google Chrome, Chromium (version Windows ou Linux, non-tester sur MacOS)
