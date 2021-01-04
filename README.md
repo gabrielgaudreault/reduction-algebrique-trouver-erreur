@@ -8,7 +8,7 @@
 3. décompresser les fichiers <b>IMPORTANT : LES FICHIERS DOIVENT ÊTRE DANS LE MÊME DOSSIER</b>
 4. clique droit sur "index.html"
 5. ouvrir dans
-6. sélectionner un logiciel web (<b>firefox</b>, <b>edge</b>, <b>chrome</b>, <b>chromium</b>, internet explorer) (<b>texte en gras</b> = tester sur ordinateur (Windows ou Linux), non-recommender téléphone Android et IOS, uniquement tester sur Nvidia Shield tablet avec Google Chrome) 
+6. sélectionner un logiciel web (<b>firefox</b>, <b>edge</b>, <b>chrome</b>, <b>chromium</b>, internet explorer) (<b>texte en gras</b> = tester sur ordinateur (Windows ou Linux), non-recommender téléphone Android et IOS, uniquement tester sur tablette Android Nvidia Shield tablet avec Google Chrome) 
 7. faire le défi
 
 ### en ligne
