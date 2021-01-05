@@ -235,7 +235,7 @@ var probleme = document.getElementById("problemes").children;
 var nbProbleme = probleme.length - nbDefi;
 var nbProblemeTotal = probleme.length;
 
-var noteMax = nbProbleme + 1;
+var noteMax = nbProbleme;
 
 var note = noteMax;
 
@@ -311,10 +311,10 @@ function continuer(premiereFois = false) {
 
         textStatus.innerHTML =  "Votre note : " + notePCT + "% <br>";
         if (note > 1) {
-            textStatus.innerHTML += "en point cela vous fait" + note + " points sur " + (noteMax + nbDefi) + "points";
+            textStatus.innerHTML += "en point cela vous fait " + note + " points sur " + (noteMax) + " points ";
         }
         else {
-            textStatus.innerHTML += "en point cela vous fait " + note + " point sur " + (noteMax + nbDefi) + "points";
+            textStatus.innerHTML += "en point cela vous fait " + note + " point sur " + (noteMax) + "points";
         }
 
         if (notePCT < 60) {
