@@ -294,7 +294,7 @@ function continuer(premiereFois = false) {
     
     if (indexProbleme >= nbProblemeTotal) {
         defiNumero.style.color = "green";
-        problemeNumero.innerHTML = "tous les problèmes ont été fait";
+        defiNumero.style.display = "none";
         
         form.style.display = "none";
 
